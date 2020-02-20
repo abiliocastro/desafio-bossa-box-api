@@ -29,6 +29,9 @@ exports.findAll = function(req, res, next) {
             } else if (error) {
                 res.status(400).send(error);
                 return;
+            } else {
+                res.status(404).send();
+                return;    
             }
         });
     }  
@@ -43,8 +46,13 @@ exports.findTag = function(req, res) {
     const tag = req.query.tag
     toolService.findByTag(tag, function(error, response) {
         if (response) {
-            res.status(200).send(response);
-            return;
+            if(response.length === 0){
+                res.status(404).send({message: 'Nenhuma ferramenta encontrada para a tag buscada'});
+                return;    
+            } else {
+                res.status(200).send(response);
+                return;
+            }
         } else if (error) {
             res.status(400).send(error);
             return;
