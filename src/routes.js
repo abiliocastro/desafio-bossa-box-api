@@ -9,5 +9,7 @@ routes.get('/', function(req, res){
 });
 
 routes.post('/tools', toolController.create);
+routes.get('/tools', toolController.findAll, toolController.findTag);
+routes.delete('/tools/:id', toolController.delete);
 
 module.exports = routes;
