@@ -37,3 +37,15 @@ A porta onde a API estará sendo executada é a 3000.
 Utilize `npm run-script dev` para executar o projeto em modo de desenvolvimento com o servidor do [nodemon](https://nodemon.io/).
 
 Essa ferramenta permite que o servidor seja recarregado automaticamente após as modificações no código do projeto serem salvas.
+
+## Documentação da API
+
+A documentação da API se encontra no seguinte caminho:
+
+> /docs/index.html
+
+Este documento pode ser executado em um navegador para visualizações das informações.
+
+A documentação da API foi estruturada utilizando o padrão [API Blueprint](https://apiblueprint.org/) e renderizada para o arquivo `index.html` através da ferramenta [Snowboard](https://github.com/bukalapak/snowboard).
+
+[Clique Aqui](https://github.com/abiliocastro/desafio-bossa-box/tree/master/docs) para acessar a pasta `docs` diretamente contendo os arquivos de estruturação e de visualização da documentação da API.
