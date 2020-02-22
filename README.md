@@ -12,11 +12,11 @@ Dentro da pasta do projeto utilize `npm install` para instalar as dependências.
 
 Esse projeto utilizou um Banco de Dados MongoDB hospedado na plataforma [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
 
-Após obter sua url de conexão no MongoDB Atlas insira no arquivo `connection.js` que se encontra em:
+Após obter sua url de conexão no MongoDB Atlas insira-a no arquivo `connection.js` que se encontra em:
 
 > /src/config/connection.js
 
-A sua URL de conexão fornecida pelo MongoDB Atlas conforme no exemplo de código abaixo:
+O exemplo de código abaixo apresenta a constante `URL` onde deve ser inserida sua url de conexão.
 
 ```javascript
 const URL = 'mongodb+srv://user:password@vuttr-evkan.mongodb.net/data_base';
