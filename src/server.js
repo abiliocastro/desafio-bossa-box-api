@@ -1,16 +1,16 @@
-var express = require('express');
-var cors = require('cors');
-var bodyParser = require('body-parser');
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
 require('./config/connection');
 
-var routes = require('./routes');
+const routes = require('./routes');
 
-var app = express();
+const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors()); //Depois limitar o cors
+app.use(cors());
 
 // Rotas
 app.use(routes);

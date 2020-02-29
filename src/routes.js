@@ -1,8 +1,8 @@
-var express = require('express');
+const express = require('express');
 
-var toolController = require('./controllers/toolController');
+const toolController = require('./controllers/toolController');
 
-var routes = express.Router();
+const routes = express.Router();
 
 routes.get('/', function(req, res){
 	res.status(200).send({message: "Root route responding"});
@@ -10,6 +10,7 @@ routes.get('/', function(req, res){
 
 routes.post('/tools', toolController.create);
 routes.get('/tools', toolController.findAll, toolController.findTag);
+routes.put('/tools', toolController.update);
 routes.delete('/tools/:id', toolController.delete);
 
 module.exports = routes;

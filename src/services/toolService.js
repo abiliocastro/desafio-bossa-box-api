@@ -1,4 +1,4 @@
-var toolModel = require('../models/tool');
+const toolModel = require('../models/tool');
 
 // Criar uma ferramenta
 exports.createTool = function(data, callback) {
@@ -21,6 +21,15 @@ exports.findAll = function(callback) {
 exports.findByTag = function(tag, callback){
     toolModel.find({ tags: { $all: [tag] } }, callback);
 }
+
+// Atualizar uma ferramenta
+exports.updateToolById = function(id, data, callback) {
+    toolModel.findByIdAndUpdate({ _id: id }, data,
+        (err, response) => {
+            callback(err, response);
+        }
+    );
+  };
 
 // Deletar uma ferramenta por id
 exports.deleteTool = function(id, callback) {

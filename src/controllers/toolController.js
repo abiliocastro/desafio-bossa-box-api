@@ -1,9 +1,9 @@
-var toolService = require('../services/toolService');
+const toolService = require('../services/toolService');
 
 // Criar uma ferramenta
 exports.create = function (req, res) {
     if (!req.body) {
-        res.status(400).send({message: 'Erro ao criar ferramenta informe os dados'});
+        res.status(400).send({message: 'Erro ao criar ferramenta informe os dados corretamente'});
         return;
     }
     toolService.createTool(req.body, function (error, response) {
@@ -58,6 +58,30 @@ exports.findTag = function(req, res) {
             return;
         }
     });
+};
+
+// Atualizar uma ferramenta
+exports.update = function (req, res) {
+    if (!req.body) {
+        res.status(400).send({message: 'Erro ao editar ferramenta, informe os dados corretamente'});
+        return;
+    } else {
+        if(!req.body.id){
+            res.status(400).send({message: 'Erro ao editar ferramenta, informe os dados corretamente'});
+            return;    
+        } else {
+            toolService.updateToolById(req.body.id, req.body.tool, function (error, response) {
+                if (response) {
+                    res.status(201).send({ message: 'Ferramenta editada com sucesso'});
+                    return;
+                } else if (error) {
+                    res.status(400).send(error);
+                    return;
+                }
+            });
+        }
+    }
+    
 };
 
 // Deletar uma ferramenta
